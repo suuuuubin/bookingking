@@ -1,0 +1,76 @@
+/* Style the tab */
+div.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+div.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+div.tab button:hover {
+    background-color: #B0C4DE;
+}
+
+/* Create an active/current tablink class */
+div.tab button.active {
+    background-color: #B0C4DE;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+.menu2{
+    text-align: center;
+    width:30px;
+}
+
+.aaa {
+    padding: 0px 10px !important;
+    border: 0px !important;
+}
+
+.updown{
+    border: 0px !important;
+}
+
+.buttons {
+  position: center;
+  text-align: center;
+  float: center;
+  display: inline-block;
+  min-width: 60px;
+  min-height: 40px;
+  padding: 10px 15px 12px;
+  font: 700 12px/1 'Open Sans', sans-serif;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 1px rgba(0, 0, 0, 0.1), inset 0 -10px 20px rgba(0, 0, 0, 0.1);
+  cursor: pointer;color: #fff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  background: #59d;
+  line-height: 18px;
+}
+
+.quantity
+{
+    width: 50px !important;
+    font-size: 11px !important;
+}
+
+.reservation{
+    font-family: 'Hanna';
+}

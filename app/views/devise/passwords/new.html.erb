@@ -1,0 +1,11 @@
+<h3 class="change-password">비밀번호를 까먹으셨나요?</h3>
+
+<div align="center">
+  <div class = "card card-cont">
+  <%= form_tag('/nonmember', class: "form-signin", method: "post") do%>
+
+    <input type="text" name="name" placeholder="아이디" style="border: 1px solid #00BFFF;">
+    <input type="image" src="/button/ok.png" border="0" alt="Submit" style="width:110px; height:44px; margin-top:10px" />
+  <%end%>
+  </div>
+</div>

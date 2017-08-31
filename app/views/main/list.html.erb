@@ -1,0 +1,39 @@
+<%if @select=='1' %>
+    <p><h1 class="title">한식</h1></p><br><br>
+  <%elsif @select =='2'%><br><br>
+    <p><h1 class="title">중식</h1></p><br><br>
+  <%elsif @select == '3'%><br><br>
+    <p><h1 class="title">양식</h1></p><br><br>
+  <%elsif @select == '4'%><br><br>
+    <p><h1 class="title">일식</h1></p><br><br>
+  <%elsif @select == '5'%><br><br>
+    <p><h1 class="title">술집</h1></p><br><br>
+  <%else%>
+    <p><h1 class="title">모두</h1></p><br><br>
+<%end%>
+
+
+<div class="container">
+	<div class="flex-row row">
+
+	    <%@choice.each do |a|%>
+			<div class="col-xs-6 col-sm-4 col-lg-3">
+				<div class="thumbnail">
+					<div class="caption">
+						<img class="shopimg" src="/shop/<%=a.shop_name%>.jpg"></img> <!--shop1.jpg-->
+						<h4 class="shop_names"><a href ="/shop/<%=a.shop_name%>"> <%=a.shop_name%></a> </h4>
+						<p class="flex-text text-muted">
+						  가게 위치 : <%=a.shop_locate%>
+						</p>
+						<p class="flex-text text-muted">
+						  잔여좌석 :  <span class="num"><%=a.seat_number%></span>
+						</p>
+						<p class="flex-text text-muted">
+							<strong><span class="feature"><%=stringcontroller(a.shop_feature)%></span></strong>
+						</p>
+					</div>
+				</div>
+			</div>
+			<%end%>
+	</div>
+</div>

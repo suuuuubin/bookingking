@@ -1,0 +1,20 @@
+<h2 class="registration">회원가입 하기 </h2>
+<div align="center"><div class = "card card-cont3">
+  <!--<form novalidate="novalidate" class="form-signin" id="new_user" action="/users" accept-charset="UTF-8" method ="post">-->
+  <%= form_tag('/users', class: "form-signin", method: "post") do%>
+  <p>이메일 입력</p>
+  <input type="text" name="user[email]" required ="required" style="border: 1px solid #00BFFF;">
+  
+  <p>비밀번호 입력</p>
+  <input type="password" name = "user[password]" required="required" style="border: 1px solid #00BFFF;">
+  
+  <p>이름 입력</p>
+  <input type="text" name="user[name]" required ="required" style="border: 1px solid #00BFFF;">
+  
+  <p>전화번호 입력 (-없이 입력)</p>
+  <input type="text" name="user[phone_number]" required ="required" placeholder="01011112222" style="border: 1px solid #00BFFF;">
+
+  <input type="image" src="/button/signup.png" border="0" alt="Submit" style="width:110px; height:44px; margin-top:10px" />
+  <%end%>
+</div>
+</div>

@@ -1,0 +1,66 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require_main_index.css
+ *= require_main_shop.css
+ *= require_pass_new.css
+ *= require_regist_edit.css
+ *= require_regist_new.css
+ *= require_session_new.css
+ *= require_test.css
+ *= menu_bar.css
+ *= main_list.css
+ *= require flatpickr
+ *= require flatpickr/material_blue
+ *= mail_list.css
+ *= mail_read.css
+ */
+ 
+ .nav_ul{
+         list-style:none;
+ }
+ .nav_ul > li{
+     float: left;
+ }
+ 
+ .logo {
+     margin-top: 70px;
+ }
+ 
+ .num
+ {
+   color: #00BFFF;
+ }
+ 
+ .feature
+ {
+  color: pink;
+  font : strong;
+ }
+ 
+ .title
+ {
+  color: #00BFFF;
+ }
+ 
+ .shopimg
+ {
+   width: 250px;
+   height: 150px !important;
+ }
+ 
+ .tt
+ {
+  border: 0px !important;
+ }

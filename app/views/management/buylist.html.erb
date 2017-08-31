@@ -1,0 +1,25 @@
+<% @list.each do |l|%>
+<div class="container">
+    <div class="flex-row row">
+        <div class="col-xs-6 col-sm-4 col-lg-3"  style="margin-top:30px">
+            <div class="thumbnail">
+                <div class="caption">
+
+                    <p>주문번호 : <span class="num"><%=l.id%></span></p>
+                    <p>주문한 가게 : <%=Shop.find(l.shop_id).shop_name%></p>
+                    <p>선택한 자리 : <%=l.table_num%>번 석</p>
+                    <p>좌석 특징 : <span class="feature"><%=Table.where(table_num: l.table_num).take.table_feature%></span></p>
+                    <p>주문한 메뉴</p>
+                    
+                    <% l.dish.each do |d|%>
+                        <p><%=d%></p>
+                    <%end%>
+                    <br>
+                    <p>예약 시간 : <%=l.book_at.to_time.strftime("%m월 %d일 %H시 %M분")%></p>
+                    <p>종료 시간 : <%=l.book_end.to_time.strftime("%m월 %d일 %H시 %M분")%></p>
+                </div>
+            </div>
+        </div>
+        <%end%>
+    </div>
+</div>

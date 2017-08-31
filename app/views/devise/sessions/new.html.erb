@@ -1,0 +1,21 @@
+<h2 class="logingogo"> 로그인 하기 </h2>
+
+<div align = "center">
+  <div class="card card-cont1">
+  <%= form_tag('/users/sign_in', class: "form-signin", method: "post") do%>
+    <span id="reauth-email" class="reauth-email"></span>
+    
+    <input type="text" id="inputEmail" class="form-control" placeholder="아이디" name="user[email]"  autofocus style="
+    border: 1px solid #00BFFF;">
+    <input type="password" id="inputPassword" class="form-control" name="user[password]" placeholder="******" style="
+    border: 1px solid #00BFFF;">
+    <%= submit_tag('로그인', class: "btn btn-lg btn-primary btn-block btn-signin") %>
+    <span id="reauth-email" class="reauth-email"></span>
+    <%= link_to(user_facebook_omniauth_authorize_path) do %><button class="btn btn-lg btn-primary btn-block btn-signin">페이스북으로 로그인하기</button><% end %>
+    <%= link_to(new_user_registration_path) do %> <button class="btn btn-lg btn-primary btn-block btn-signin">회원가입</button><%end%>
+
+<%end%>
+ 
+  <a href="/users/password/new" class="forgot-password">Forgot the password?</a>
+  </div>
+</div>

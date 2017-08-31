@@ -1,0 +1,89 @@
+
+<style type="text/css">
+    body{
+        line-height:2em;        
+        font-family:"맑은 고딕";
+}
+    ul, li{ 
+        list-style:none;
+        text-align:center;
+        padding:0;
+        margin:0;
+}
+
+    #mainWrapper{
+        width: 800px;
+        margin: 0 auto; /*가운데 정렬*/
+    }
+
+    #mainWrapper > ul > li:first-child {
+        text-align: center;
+        font-size:14pt;
+        height:40px;
+        vertical-align:middle;
+        line-height:30px;
+}
+
+    #ulTable {margin-top:10px;}
+    
+
+    #ulTable > li:first-child > ul > li {
+        background-color:#c9c9c9;
+        font-weight:bold;
+        text-align:center;
+}
+
+    #ulTable > li > ul {
+        clear:both;
+        padding:0px auto;
+        position:relative;
+        min-width:40px;
+}
+    #ulTable > li > ul > li { 
+        float:left;
+        font-size:10pt;
+        border-bottom:1px solid silver;
+        vertical-align:baseline;
+}    
+
+    #ulTable > li > ul > li:first-child           {width:35%;} /*제목 열 크기*/
+    #ulTable > li > ul > li:first-child +li          {width:45%;} /*제목 열 크기*/
+    #ulTable > li > ul > li:first-child +li +li    {width:10%;} /*작성자 열 크기*/
+    #ulTable > li > ul > li:first-child +li +li +li    {width:5%;} /*작성자 열 크기*/
+    #ulTable > li > ul > li:first-child +li +li +li +li   {width:5%;} /*작성자 열 크기*/
+</style>
+
+    <div id="mainWrapper" align="center">
+
+        <ul>
+            <!-- 게시판 제목 -->
+            <li class="mail">쪽지함</li>
+
+            <!-- 게시판 목록  -->
+                <ul id ="ulTable">
+                    <li>
+                        <ul>
+                            <li>제목</li>
+                            <li>내용</li>
+                            <li>작성자</li>
+                        </ul>
+                    </li>
+                    <!-- 게시물이 출력될 영역 -->
+                    
+                    <% @my.each do |p|%>
+                    <li>
+                        <ul>
+                            <li><p><%=p.title%></p></li>
+                            <li><p><%=p.content%></p></li>
+                            <li><p><%=p.sender_shop%></p></li>
+                            <li><a href="/mail/read/<%=p.id%>"><p>[v]</p></a></li>
+                            <li><a href="/mail/delete/<%=p.id%>"><p>[x]</p></a></li>
+                        </ul>
+                    </li>
+                    <%end%>
+                    
+                </ul>
+            </li>
+
+        </ul>
+    </div>

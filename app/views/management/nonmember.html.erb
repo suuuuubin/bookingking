@@ -1,0 +1,19 @@
+<p><%=@name%></p>
+
+<p><%=@userinfo%></p>
+
+<div align="center">
+  <div class = "card card-cont4">
+  <%= form_tag('/edit_user', class: "form-signin", method: "post") do%>
+
+    <p>이름</p> <input type="text" name="name" value="<%=@userinfo%>" style="border: 1px solid #00BFFF;">
+    
+    <p>새로운 비밀번호</p><input type="password" name="password" style="border: 1px solid #00BFFF;">
+    
+    <p>비밀번호확인</p><input type="password" name="password_confirmation" style="border: 1px solid #00BFFF;">
+    <p></p>
+    
+    <input type="image" src="/button/ok.png" border="0" alt="Submit" style="width:110px; height:44px; margin-top:10px" />
+  <%end%>
+  </div>
+</div>

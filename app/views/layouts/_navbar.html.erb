@@ -1,0 +1,51 @@
+<div class="fixed-nav-bar">
+  <ul class="nav navbar-nav nav_ul" style="float:left">
+    <li class="active"> <%= link_to "home", "/" %></li>
+    <li><%= link_to "list", "/list" %></li>
+    <%if user_signed_in? %>
+      <li><%= link_to "구매목록", "/buylist/#{current_user.name}"%></li>
+    <%end%>
+  </ul>
+  
+  <ul class="nav navbar-nav navbar-right" style="float:right">
+    <% if user_signed_in? %>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.name %> <b class="caret"></b></a>
+        <ul class="dropdown-menu" style = "font-size:15px;">
+          
+          <%if current_user.has_role? 'manager'%>
+            <li><%= link_to "가게 관리하기", "/booklist/#{Shop.find(current_user.id).shop_name}" %></li>
+          <% elsif current_user.has_role? 'tester' %>
+            <li><%= link_to "테스트페이지 입장", "/test" %></li>
+          <%else%>
+            <li><%= link_to "회원정보수정", edit_user_registration_path %></li>
+          <%end%>
+          <li><%= link_to "쪽지함 (#{Post.where(receiver_id: current_user.id, checked: false).count})", "/mail/list"%></li>
+          <li><%= link_to "로그아웃", destroy_user_session_path, method: :delete, data: { confirm: "로그아웃 하시겠습니까?" } %></li>
+        </ul>
+      </li>
+    <% else %>
+        <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"> 로그인하기 <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+        <%= form_tag('/users/sign_in', class: "form-signin", method: "post") do%>
+          
+                <input type="text" id="inputEmail" class="form-control" placeholder="아이디" name="user[email]"  autofocus style="border: 1px solid #00BFFF;">
+                <input type="password" id="inputPassword" class="form-control" name="user[password]" placeholder="******" style="border: 1px solid #00BFFF;">
+                
+                <%= submit_tag('로그인', class: "btn btn-lg btn-primary btn-block btn-signin") %>
+                <span id="reauth-email" class="reauth-email"></span>
+            
+            <%= link_to(user_facebook_omniauth_authorize_path) do %><button class="btn btn-lg btn-primary btn-block btn-signin">페이스북으로 로그인하기</button><% end %>
+            <button type="button" class ="btn btn-lg btn-primary btn-block btn-signin" onclick="location.href='/users/sign_up' ">회원가입</button>
+            <%end%>
+            
+            <a href="/users/password/new" class="forgot-password" style="text-decoration:none; font-size:15px; font-weight:600;">&nbsp;  &nbsp;Forgot the password?</a>
+            
+        </ul>
+      </li>
+    <% end %>
+  </ul>
+</div> 
+
+<!--메뉴바-->

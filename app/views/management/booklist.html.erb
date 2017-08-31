@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="flex-row row">
+        <%@ex.each do |s| %>
+        <% if s.checked == false%>
+        <div class="col-xs-6 col-sm-4 col-lg-3"  style="margin-top:30px">
+            <div class="thumbnail">
+                <div class="caption">
+
+                    <p>주문번호 : <span class="num"><%=s.id%></span></p>
+                    <p>주문한 고객 = <%=User.find(s.user_id).email%></p>
+                    <p>고객의 전화번호 = <%=User.find(s.user_id).phone_number%></p>
+                    <p>선택한 자리 = <%=s.table_num%>번 석</p>
+                    <p>주문한 메뉴</p>
+                    
+                    <% s.dish.each do |d| %>
+                        <p><%=d%></p>
+                    <%end%>
+                    
+                    <br>
+                    <p>예약 시간 : <%=s.book_at.to_time.strftime("%m월 %d일 %H시 %M분")%></p>
+                    <p>종료 시간 : <%=s.book_end.to_time.strftime("%m월 %d일 %H시 %M분")%></p>
+                    
+                    <div align="center">
+                        <table class="tt">
+                        <tr>
+                            <td class="tt">
+                                <form action="/check/<%=s.id%>" method="post">
+                                    <input type="hidden" name="authenticity_token", value = "<%=form_authenticity_token %>">
+                                    <button type="submit" class="btn btn-default" style="margin-right :10px"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></button>
+                                </form>
+                            </td>
+                            <td class="tt">
+                                <form action="/delete/<%=s.id%>" method="post">
+                                    <input type="hidden" name="authenticity_token", value = "<%=form_authenticity_token %>">
+                                    <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                                </form>
+                            </td>
+                        </tr>
+                    </table>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <%end%>
+        <%end%>
+    </div>
+</div>

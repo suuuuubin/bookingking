@@ -1,0 +1,16 @@
+    <p>가게이름 : <%=@shop_info.shop_name%></p>
+    <p>가게위치 : <%=@shop_info.shop_locate%></p>
+    <p>좌석 수 : <%=@shop_info.seat_number%></p>
+    <br>
+    <p>가게 특징 : <span class = "feature"><%=@shop_info.shop_feature%></span></p>
+    
+    <%@booking_list.each do |b|%>
+    <hr>
+        <p>주문 유저 : <%=User.find(b.user_id).name%></p>
+        <% b.dish.each do |d|%>
+            <p><%=d%></p>
+        <%end%>
+        <br>
+    <%end%>
+    
+    <a href="/" ><img src="/button/home.png"></a>

@@ -1,0 +1,86 @@
+<div class="container">
+    <div class="row">
+        <!--<div class="col-md-4 col-xs-12" align="center">-->
+        <!--    <form action="/shop/" method="get">-->
+        <!--        <input type="text" name="shop_name" class="search-bar2" placeholder="가게이름">-->
+        <!--        <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>-->
+        <!--    </form>-->
+        <!--</div>-->
+        
+        <div class="col-md-offset-1 col-md-5 col-xs-12" align="center">
+            <form action="/search/" method="get">
+                <select name="search_type" class="select_type" style="width:100px">
+                      <option value="shop_name">이름으로 검색</option>
+                      <option value="shop_locate">주소로 검색</option>
+                      <option value="shop_feature">특징으로 검색</option>
+                </select>
+                <input type="text" name="feature" class="search-bar2" placeholder="검색어를 입력하세요" style="width:200px">
+                <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+            </form> 
+        </div>
+        
+        <div class="col-md-offset-1 col-md-4 col-xs-12" align="center">
+            <form action="list/"> 
+            <p>가게 분류 별로 보기  
+            <select name="select_type" class="select_type">
+              <option value=0>전체</option>
+              <option value=1>한식</option>
+              <option value=2>중식</option>
+              <option value=3>양식</option>
+              <option value=4>일식</option>
+              <option value=5>술집</option>
+            </select>
+            <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button></p>
+            </form>
+        </div>
+    </div> <!-- row -->
+</div><!-- /container -->
+
+        <!--[if lt IE 10]>
+            <script src="assets/js/placeholder.js"></script>
+        <![endif]-->
+<hr>
+
+<div class="container">
+    <!-- Team Members Row -->
+    <div class="row">
+
+        <div class="col-md-3 col-xs-6" align="center">
+            <a href="/list/1"><img class="img-circle img-responsive img-center" src="/index/bab_re1.png" style="width:180px; height:180px;" onmouseover="this.src='/index/onclick_kor_re.png';" onmouseout="this.src='/index/bab_re1.png';" /></a>
+        </div>  
+        <div class="col-md-3 col-xs-6" align="center">
+            <a href="/list/2"><img class="img-circle img-responsive img-center" src="/index/jja_re.png" style="width:190px; height:190px;"onmouseover="this.src='/index/onclick_china1.png';" onmouseout="this.src='/index/jja_re.png';" /></a>
+        </div>
+        <div class="col-md-3 col-xs-6" align="center">
+            <a href="/list/3"><img class="img-circle img-responsive img-center" src="/index/steak_re.jpg" style="width:200px; height:200px;" onmouseover="this.src='/index/onclick_west2.png';" onmouseout="this.src='/index/steak_re.jpg';" /></a>
+        </div>
+        <div class="col-md-3 col-xs-6" align="center">
+            <a href="/list/4"><img class="img-circle img-responsive img-center" src="/index/sushi_re.png" style="width:180px; height:180px" onmouseover="this.src='/index/onclick_jap11.png';" onmouseout="this.src='/index/sushi_re.png';" /></a>
+        </div>
+    </div>
+    
+    <br></br>
+    
+    <div class="row">
+        <div class="col-md-3 col-xs-6" align="center">
+            <a href="/list/5"><img class="img-square img-responsive img-center" src="/index/beer_re.png" onmouseover="this.src='/index/over_sul.png';" onmouseout="this.src='/index/beer_re.png';" /></a>
+        </div>  
+        <div class="col-md-3 col-xs-6" align="center">
+            <a href="/list"><img class="img-responsive img-center" src="/index/all.png" style="width:180px; height:190px;"/></a>
+        </div>
+        <div class="col-md-3 col-xs-6" align="center">
+            <a href="/shop/<%=@today[0].shop_name%>"><img class="img-responsive img-center" src="/index/mat.png" style="width:180px; height:190px;"/></a>
+        </div>
+        <div class="col-md-3 col-xs-6" align="center">
+            <a href="/shop/<%=@recommend[0].shop_name%>"><img class="img-responsive img-center" src="/index/qmark.png" style="width:180px; height:190px;" onmouseover="this.src='/index/onclick_qmark1.png';" onmouseout="this.src='/index/qmark.png';" /></a>
+        </div>
+    </div>
+</div>
+    <hr>
+    <br><br><br><br><br><br><br><br><br>
+    <!-- /.container -->
+    
+    
+    
+
+

@@ -1,0 +1,24 @@
+<div class="container">
+	<div class="flex-row row">
+
+	    <%@search.each do |a|%>
+			<div class="col-xs-6 col-sm-4 col-lg-3">
+				<div class="thumbnail">
+					<div class="caption">
+						<img class="shopimg" src="/shop/<%=a.shop_name%>.jpg"></img> <!--shop1.jpg-->
+						<h4 class="shop_names"><a href ="/shop/<%=a.shop_name%>"> <%=a.shop_name%></a> </h4>
+						<p class="flex-text text-muted">
+						  가게 위치 : <%=a.shop_locate%>
+						</p>
+						<p class="flex-text text-muted">
+						  잔여좌석 :  <span class="num"><%=a.seat_number%></span>
+						</p>
+						<p class="flex-text text-muted">
+							<strong><span class="feature"><%=stringcontroller(a.shop_feature)%></span></strong>
+						</p>
+					</div>
+				</div>
+			</div>
+			<%end%>
+	</div>
+</div>

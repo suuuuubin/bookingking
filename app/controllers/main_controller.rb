@@ -24,7 +24,6 @@ class MainController < ApplicationController
     end
     
     @shop_info.tables.each do |t|
-      
       if t.book_at.nil? or (t.book_end.to_time < (Time.zone.now).to_time) or t.bookings.count==0
         t.table_state=0
       elsif (  t.book_at.to_time) and ((Time.zone.now).to_time < t.book_end.to_time)
@@ -32,8 +31,7 @@ class MainController < ApplicationController
       else
         t.table_state=1
       end
-      
-      t.save  
+    t.save  
     end
   
   end
